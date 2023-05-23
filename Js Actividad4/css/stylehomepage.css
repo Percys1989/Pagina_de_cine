@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.Container{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    align-items: center;
+    justify-content:center;
+}
+.Container img{
+    filter: blur(1.5em);
+    width: 99%;
+    height: 99%;
+}
+.ContainerForm{
+    width: 450px;
+    height: 180px;
+    display: flex;
+    padding-top: 30px;
+    justify-content: center;
+    border-radius: 1em;
+    background: rgb(131, 131, 131);
+    -webkit-box-shadow: 9px 9px 14px -4px rgba(64,64,64,1);
+    -moz-box-shadow: 9px 9px 14px -4px rgba(64,64,64,1);
+    box-shadow: 9px 9px 14px -4px rgba(64,64,64,1);
+    position: relative;
+    margin: auto;
+    top: 300px;
+}
+.ContainerForm form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+#FormLabel{
+    text-align: center;
+    padding: .5em;
+}
+#FormList{
+    text-align: center;
+    padding: .5em;
+}
+.ContainerForm form input{
+    width: 80%;
+    padding: .8em 1em;
+    border: 0;
+    border-radius: .5em;
+    background: rgb(202, 202, 202);
+    border-bottom: 1px solid rgb(0, 0, 0);
+}
+.ContainerForm form button{
+    width: 15%;
+    padding: .5em 1em;
+    border-radius: .5em;
+    border: 0;
+    margin-left: .8em;
+}
+#FormList a{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    font-size: large;
+}

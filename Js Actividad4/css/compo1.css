@@ -1,0 +1,306 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+nav{
+    background: rgb(0, 0, 0);
+    display: flex;
+    justify-content: space-between;
+    width: 100wh;
+    height: 70px;
+    padding: 1em;
+}
+#Codigo{
+    background: transparent;
+    display: flex;
+    align-items:center;
+    justify-content: flex-start;
+    color: white;
+}
+#Lista{
+    background: transparent;
+    display: flex;
+    align-items: center;
+}
+#Lista ol{
+    list-style: none;
+}
+#Lista ol li{
+    display: inline-block;
+    padding: 1em;
+}
+#Lista ol li a{
+    text-decoration: none;
+    color: white;
+    font-size: large;
+}
+#Lista ol li:hover{
+    background: rgb(100, 100, 100);
+    border-radius: 8px;
+    transition: .5s;
+}
+#Bars{
+    background: transparent;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: x-large;
+    color: white;
+}
+@media screen and (max-width: 856px) {
+    nav{
+        height: 70px;
+        width: 100%;
+        padding: 0;
+        font-size: 15px;
+    }
+    #Codigo{
+        padding-left: 8px;
+    }
+    #Lista{
+        position: fixed;
+        background: rgb(58, 58, 58);
+        width: 100vw;
+        text-align: center;
+        justify-content: center;
+        top: -100vh;
+    }
+    #Lista ol{
+        display: flex;
+        flex-direction: column;
+    }
+    #Lista ol li{
+        width: 100vw;
+    }
+    #Bars{
+        display: block;       
+        display: flex;
+        padding-right: 8px;
+    }
+    #Bars button{
+        background: transparent;
+        border: 0;
+        cursor: pointer;
+    }
+    #Bars button i {
+        font-size: x-large;
+        color: white;
+    }
+    
+}
+#Container{
+    background: white;
+    width: 80vw;
+    margin: 0 auto;
+    padding-top: 2em;
+    display: grid;
+    flex-wrap: wrap;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3, 610px);
+    justify-items: center;
+    column-gap: 1em;
+    row-gap: 3em;
+    font-family: 'Times New Roman', Times, serif;
+}
+.Card{
+    width: 350px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+}
+.Animado{
+    opacity: 0;
+    transition: all .5s;
+}
+.MostrarArriba{
+    animation: MostarArriba 1s;
+}
+@keyframes MostrarArriba {
+    0%{
+        transform: translateY(60px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.Card:hover{
+    cursor: pointer;
+    transform: translateY(-.5em);
+}
+.movies1{
+    background: transparent;
+    width: 350px;
+    height: 510px;
+    border-radius: 1em;
+    -webkit-box-shadow: 6px 6px 7px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 6px 6px 7px -2px rgba(0,0,0,0.75);
+    box-shadow: 6px 6px 7px -2px rgba(0,0,0,0.75);
+    position: relative;
+    overflow: hidden;
+}
+.texto{
+    width: 350px;
+    height: 90px;
+    text-align: center;
+    text-shadow: 0 0 1px;
+    line-height: 150%;
+    color: rgb(0, 0, 0);
+    margin-top: .5em;
+}
+.imagen{
+    height: 100%;
+    width: 100%;
+    outline-offset: -8px;
+    outline: 1px solid white;
+    margin-bottom: .5em;
+    position: absolute;
+    inset: 0;
+    object-fit: cover;
+    transition: transform .75s;
+}
+.imagen::before{
+    content: "";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    position: absolute;
+}
+.movies1:hover .imagen{
+    transform: scale(1.15);
+}
+.imagen img{
+    width: 100%;
+    height: 100%;
+}
+.Card h2{
+    font-size: x-large;
+}
+.coloreado{
+    background: rgb(150, 150, 150);
+    width: 60px;
+    margin: 0 auto;
+}
+.Titulo{
+    color: red;
+    text-shadow: 0 4px 1px black;
+    text-align: center;
+    background: linear-gradient(to bottom, rgb(136, 136, 136), rgb(58, 51, 51));
+}
+#Ir_arriba_boton{
+    position: fixed;
+    z-index: 1000;
+    right: 25px;
+    bottom: 25px;
+    background-color: rgb(0, 58, 112);
+    width: 64px;
+    height: 64px;
+    color: white;
+    text-align: center;
+    border-radius: 50%;
+    transition: all .2s;
+}
+#Ir_arriba_boton:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.Indicador_contenedor{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    height: 7px;
+    z-index: 1001;
+}
+.Indicador_scroll{
+    height: 100%;
+    width: 0;
+    background-color: rgb(0, 58, 112);
+}
+.Ocultar{
+    opacity: 0;
+    visibility: hidden;
+}
+.Mostrar{
+    opacity: 1;
+    visibility: visible;
+}
+.pie-pagina{
+    width: 100%;
+    margin-top: 2em;
+    background-color: #0a141d;
+}
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap:50px;
+    padding: 45px 0px;
+}
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+}
+.pie-pagina .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+.pie-pagina .grupo-1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+}
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #0d2033;
+    text-align: center;
+    transition: all 300ms ease;
+}
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: rgb(0, 89, 255);
+}
+.pie-pagina .grupo-2{
+    background-color: #0a1a2a;
+    padding: 15px 10px;
+    text-align: center;
+    color: #fff;
+}
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+@media screen and (max-width:800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap:30px;
+        padding: 35px 0px;
+    }
+}
+@media screen and (max-width: 890px){
+    #Container{
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 1em;
+    }
+}
+@media screen and (max-width: 601px){
+    #Container{
+        grid-template-columns: repeat(1,1fr);
+        column-gap: 1em;
+    }
+}
